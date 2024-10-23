@@ -1,0 +1,29 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask a Question</title>
+    <style>
+        pre {
+            background-color: #f4f4f4; /* Light gray background */
+            padding: 10px; /* Padding around the text */
+            border: 1px solid #ccc; /* Border around the preformatted text */
+            white-space: pre-wrap; /* Preserve whitespace and wrap text */
+            word-wrap: break-word; /* Break long words */
+        }
+    </style>
+</head>
+<body>
+    <h1>Ask a Question</h1>
+    <form method="POST">
+        <input type="text" name="question" placeholder="Type your question here" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if response %}
+        <h2>Response:</h2>
+        <pre>{{ response | safe }}</pre>
+    {% endif %}
+</body>
+</html>
